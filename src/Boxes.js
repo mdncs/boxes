@@ -1,5 +1,5 @@
 import React from 'react';
-import { sample, random } from 'lodash';
+import { sample } from 'lodash';
 import Box from './Box';
 
 class Boxes extends React.Component {

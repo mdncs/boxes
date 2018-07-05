@@ -1,14 +1,14 @@
 import React from 'react';
 
-class Box extends React.Component {
+// to make the boxes more reusable, function to create standard box
 
-    render () {
-        const { left, top } = this.props;
+function Box (props) {
+
+        const { left, top } = props;
         return <div className="box">
             <span className="box-label">
                 left: {left} top: {top}
             </span>
         </div>
-    }
 }
 export default Box;
