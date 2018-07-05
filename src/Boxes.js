@@ -1,5 +1,6 @@
 import React from 'react';
 import { sample } from 'lodash';
+import Box from './Box';
 
 class Boxes extends React.Component {
     constructor() {
@@ -16,10 +17,9 @@ class Boxes extends React.Component {
         }
     }
 
+    // if boxes are not allowed to overlap at any point
+
     shuffle = () => {
-        // TODO: using react state, shuffle .box's to
-        // new random positions within .box-container and update
-        // labels
 
         const sizeArr = [50, 100, 150, 200, 250];
         const blue = {
@@ -47,26 +47,22 @@ class Boxes extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        const { redBox, blueBox } = this.state;
         return (
             <div className="container">
                 <div className="box-container">
-                    <div className="box red" style={{ left: this.state.redBox.left, top: this.state.redBox.top }}>
-                        <span className="box-label">
-                            left: {this.state.redBox.left} top: {this.state.redBox.top}
-                        </span>
+                    <div className="box red" style={{ left: redBox.left, top: redBox.top }}>
+                        <Box left={redBox.left} top={redBox.top} />
                     </div>
-                    <div className="box blue" style={{left: this.state.blueBox.left, top: this.state.blueBox.top}}>
-                        <span className="box-label">
-                            left: {this.state.blueBox.left} top: {this.state.blueBox.top}
-                        </span>
+                    <div className="box blue" style={{ left: blueBox.left, top: blueBox.top }}>
+                        <Box left={blueBox.left} top={blueBox.top} />
                     </div>
                 </div>
                 <button
                     className="button shuffle"
                     onClick={this.shuffle}>
                     Shuffle!
-        </button>
+                </button>
             </div>
         );
     }

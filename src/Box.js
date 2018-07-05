@@ -1,18 +1,12 @@
 import React from 'react';
 
 class Box extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            left: 0,
-            top: 0
-        }
-    }
 
     render () {
+        const { left, top } = this.props;
         return <div className="box">
             <span className="box-label">
-                left: {this.state.left} top: {this.state.top}
+                left: {left} top: {top}
             </span>
         </div>
     }
