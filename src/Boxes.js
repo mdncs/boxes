@@ -1,5 +1,5 @@
 import React from 'react';
-import { sample } from 'lodash';
+import { sample, random } from 'lodash';
 import Box from './Box';
 
 class Boxes extends React.Component {
@@ -66,6 +66,45 @@ class Boxes extends React.Component {
             </div>
         );
     }
+
+    // if boxes are allowed to overlap but not entirely
+
+    // shuffle = () => {
+    //     function getRandomPoint () {
+    //         return `${random(0, 250)}px`;
+    //     }
+    //     this.setState({
+    //         redBox: {
+    //             left: getRandomPoint(),
+    //             top: getRandomPoint()
+    //         },
+    //         blueBox: {
+    //             left: getRandomPoint(),
+    //             top: getRandomPoint()
+    //         }
+    //     })
+    // }
+
+    // render() {
+    //     const { redBox, blueBox } = this.state;
+    //     return (
+    //         <div className="container">
+    //             <div className="box-container">
+    //                 <div className="box red" style={{ left: redBox.left, top: redBox.top }}>
+    //                     <Box left={redBox.left} top={redBox.top} />
+    //                 </div>
+    //                 <div className="box blue" style={{ left: blueBox.left, top: blueBox.top }}>
+    //                     <Box left={blueBox.left} top={blueBox.top} />
+    //                 </div>
+    //             </div>
+    //             <button
+    //                 className="button shuffle"
+    //                 onClick={this.shuffle}>
+    //                 Shuffle!
+    //             </button>
+    //         </div>
+    //     );
+    // }
 }
 
 export default Boxes;
