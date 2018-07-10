@@ -3,17 +3,14 @@ import { sample, random } from 'lodash';
 import Box from './Box';
 
 class Boxes extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            redBox: {
-                left: '0px',
-                top: '0px'
-            },
-            blueBox: {
-                left: '0px',
-                top: '50px'
-            }
+    state = {
+        redBox: {
+            left: '0px',
+            top: '0px'
+        },
+        blueBox: {
+            left: '0px',
+            top: '50px'
         }
     }
 
